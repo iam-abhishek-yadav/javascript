@@ -1,13 +1,21 @@
 // Q-151 in leetcode
 
-var reverseWords = function(s) {
-    let wordsArray = s.split(/\s+/).filter(word => word !== '');
-    let reversedWordsArray = wordsArray.reverse();
-    let reversedString = reversedWordsArray.join(' ');
-    return reversedString;
-};
+function reverseWords(str) {
+    if (!str || str.length === 0) {
+        return str;
+    }
   
-let inputString = "Hello World";
-let reversedOutput = reverseWords(inputString);
-console.log(reversedOutput);
+    const words = str.trim().split(/\s+/);
+    const reversed = [];
+  
+    for (let i = words.length - 1; i >= 0; i--) {
+        reversed.push(words[i]);
+    }
+  
+    return reversed.join(' ');
+  }
+  
+const input = "Hello World JavaScript";
+const result = reverseWords(input);
+console.log(result);
   
