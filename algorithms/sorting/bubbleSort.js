@@ -1,14 +1,17 @@
-function bubbleSort(arr) {
-    let n = arr.length;
-    for (let i = 0; i < n; i++) {
-        for (let j = 0; j < n - i - 1; j++) {
-            if (arr[j] > arr[j + 1]) {
-                let temp = arr[j];
-                arr[j] = arr[j + 1];
-                arr[j + 1] = temp;
-            }
-        }
+let myArray = [7, 3, 9, 12, 11];
+let n = myArray.length;
+
+for (let i = 0; i < n - 1; i++) {
+  let swapped = false;
+  for (let j = 0; j < n - i - 1; j++) {
+    if (myArray[j] > myArray[j + 1]) {
+      [myArray[j], myArray[j + 1]] = [myArray[j + 1], myArray[j]];
+      swapped = true;
     }
-    return arr;
+  }
+  if (!swapped) {
+    break;
+  }
 }
 
+console.log("Sorted array:", myArray);
